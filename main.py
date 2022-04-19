@@ -99,19 +99,24 @@ class TheMatrixHash:
 
 #####################################################################
 ########################### SECTION 2 ###############################
-tmh = TheMatrixHash()
-matrix_hash = tmh.createMatrixHash(passwd='test1234')
-print(matrix_hash)
+while True:
+    try:
+        tmh = TheMatrixHash()
+        user = input('password: ')
+        matrix_hash = tmh.createMatrixHash(passwd=user)
+        
 
 
-with open('matrixHash.json', 'r') as f:
-    p = json.load(f)
+        with open('matrixHash.json', 'r') as f:
+            p = json.load(f)
 
 
-    if p == matrix_hash:
-        print('ACCESS: ', True)
-    else:
-        print('ACCESS: ', False)
+            if p == matrix_hash:
+                print('ACCESS: ', True)
+            else:
+                print('ACCESS: ', False)
 
-print(numpy.vstack(matrix_hash))
+        print('\n\n', numpy.vstack(matrix_hash), '\n\n')
+    except:
+        pass
 ######################################################################
