@@ -53,7 +53,7 @@ class TheMatrixHash:
         hashed = []
         for n in range(len(passwd)):
 
-            matrix.append([i+mv[n]-7 for i in range(1, len(passwd) + 1)])
+            matrix.append([i+mv[n]-24 for i in range(1, len(passwd) + 1)])
         #print(numpy.vstack(matrix))
 
         for i in range(len(mv)):
@@ -89,6 +89,7 @@ class TheMatrixHash:
             hash_matrix.append(numberlist)
 
         #print(numpy.vstack(hash_matrix))
+
         return hash_matrix
 
 ### You can delete section 2#
@@ -96,11 +97,14 @@ class TheMatrixHash:
 #####################################################################
 ########################### SECTION 2 ###############################
 tmh = TheMatrixHash()
-matrix_hash = tmh.createMatrixHash(passwd='test1234')
+matrix_hash = tmh.createMatrixHash(passwd='Om@r_92930')
+print(matrix_hash)
 
 
 with open('matrixHash.json', 'r') as f:
     p = json.load(f)
+
+
     if p == matrix_hash:
         print('ACCESS: ', True)
     else:
