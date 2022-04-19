@@ -49,15 +49,13 @@ class TheMatrixHash:
     def createMatrixHash(self, passwd=str):
         bta = bytearray(passwd, 'utf-8')
         mv = list(memoryview(bta))
-        print(mv)
-
+       
 
         matrix = []
         hashed = []
         for n in range(len(passwd)):
             stde = int(numpy.median(mv[n])) + int(numpy.mean(mv[n])) / int(numpy.sum(mv))
 
-            print(stde)
             matrix.append([i+stde for i in range(1, len(passwd) + 1)])
 
 
@@ -87,7 +85,7 @@ class TheMatrixHash:
             numberlist = [n+mv[i-1]+len(str(mv[i-1])) for n in matrix[i]]
             hashed.append(numberlist)
 
-        print(numpy.vstack(hashed))
+        #print(numpy.vstack(hashed))
         hash_matrix = []
         for numberlist in hashed:
             numberlist[:] = [' '.join(format(ord(b), 'b') .replace('0', self.sample[0]).replace('1', self.sample[1]) for b in str(i)) for i in numberlist]
