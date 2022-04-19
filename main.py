@@ -49,12 +49,17 @@ class TheMatrixHash:
     def createMatrixHash(self, passwd=str):
         bta = bytearray(passwd, 'utf-8')
         mv = list(memoryview(bta))
+        print(mv)
+
+
         matrix = []
         hashed = []
         for n in range(len(passwd)):
+            stde = int(numpy.median(mv[n])) + int(numpy.mean(mv[n])) / int(numpy.sum(mv))
 
-            matrix.append([i+mv[n]-24 for i in range(1, len(passwd) + 1)])
-        #print(numpy.vstack(matrix))
+            print(stde)
+            matrix.append([i+stde for i in range(1, len(passwd) + 1)])
+
 
         for i in range(len(mv)):
             num = mv[i]
@@ -76,19 +81,19 @@ class TheMatrixHash:
                 shiftV = self.vShift(matrix, -num+1, i + 1)
                 matrix[:] = shiftV
                 continue
-        #print(numpy.vstack(matrix))
+
 
         for i in range(len(matrix)):
-            numberlist = [n-mv[i-1]+17 for n in matrix[i]]
+            numberlist = [n+mv[i-1]+len(str(mv[i-1])) for n in matrix[i]]
             hashed.append(numberlist)
 
-        #print(numpy.vstack(hashed))
+        print(numpy.vstack(hashed))
         hash_matrix = []
         for numberlist in hashed:
             numberlist[:] = [' '.join(format(ord(b), 'b') .replace('0', self.sample[0]).replace('1', self.sample[1]) for b in str(i)) for i in numberlist]
             hash_matrix.append(numberlist)
 
-        #print(numpy.vstack(hash_matrix))
+
 
         return hash_matrix
 
@@ -97,9 +102,11 @@ class TheMatrixHash:
 #####################################################################
 ########################### SECTION 2 ###############################
 tmh = TheMatrixHash()
-matrix_hash = tmh.createMatrixHash(passwd='Om@r_92930')
+matrix_hash = tmh.createMatrixHash(passwd='test1234')
 print(matrix_hash)
 
+#with open('matrixHash.json', 'w') as f:
+#    p = json.dump(matrix_hash,f)
 
 with open('matrixHash.json', 'r') as f:
     p = json.load(f)
