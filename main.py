@@ -95,10 +95,10 @@ class TheMatrixHash:
 
         return hash_matrix
 
-### You can delete section 2#
+### You can delete section 1#
 
 #####################################################################
-########################### SECTION 2 ###############################
+########################### SECTION 1 ###############################
 while True:
     try:
         tmh = TheMatrixHash()
