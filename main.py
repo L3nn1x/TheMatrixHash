@@ -105,8 +105,6 @@ tmh = TheMatrixHash()
 matrix_hash = tmh.createMatrixHash(passwd='test1234')
 print(matrix_hash)
 
-#with open('matrixHash.json', 'w') as f:
-#    p = json.dump(matrix_hash,f)
 
 with open('matrixHash.json', 'r') as f:
     p = json.load(f)
