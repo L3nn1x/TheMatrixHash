@@ -90,4 +90,5 @@
   '☵☵☶☵☵☵ ☵☵☵☶☶☶' '☵☵☵☶☶☶ ☵☵☶☶☶☶' '☵☵☶☵☵☶ ☵☵☶☵☶☵' '☵☵☶☶☶☵ ☵☵☶☵☵☶']]
 
 
-  
+# NOTE
+  * first person on cracking my hash will get $20.00
