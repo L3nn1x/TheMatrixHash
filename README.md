@@ -1,5 +1,5 @@
 # TheMatrixHash
-  instead of a normal hash "sdrftghubyjfdjyvtyfjyutyc" it returns a lengh(password) X lengh(password) matrix hash
+  instead of a normal hash "e9e633097ab9ceb3e48ec3f70ee2beba41d05d5420efee5da85f97d97005727587fda33ef4ff2322088f4c79e8133cc9cd9f3512f4d3a303cbdb5bc585415a00" it returns a lengh(password) X lengh(password) matrix hash
   
   which is undecodable, Trust me, you will get diarrea if u try to crack my uncrackble Matrix Hash
   
